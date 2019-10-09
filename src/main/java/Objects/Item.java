@@ -3,26 +3,36 @@ package Objects;
 public class Item {
 
     private String name;
-    private int price;
+    private float price;
     private int quantity;
 
-    public Item(String name, int price, int quantity){
+    public Item(String name, float price){
         this.name = name;
         this.price = price;
-        this.quantity =quantity;
     }
-
 
     public String getName() {
         return name;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
     @Override
     public String toString() {
-        return (name + " " + quantity + " £" + price + " Total: " + price * quantity);
+        return (name + " "  + " £" + price+" "+quantity+" Total: £"+price*quantity);
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float calculateTotal(){
+        return quantity*price;
     }
 }
