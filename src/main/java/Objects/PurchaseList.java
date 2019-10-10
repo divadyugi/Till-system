@@ -18,6 +18,11 @@ public class PurchaseList {
         items.add(item);
     }
 
+    public void addDrinkItem(String name, float price, int quantity, String type){
+        Item item = new Item(name,price,type);
+        item.setQuantity(quantity);
+    }
+
     public void printAllItems(){
         for(Item item:items){
             System.out.println(item.toString());
@@ -26,7 +31,7 @@ public class PurchaseList {
 
     public void removeItem(Item itemToRemove){
         for(Item item:items){
-            if(itemToRemove.getName().equals(item.getName())){
+            if(itemToRemove.getName().equals(item.getName()) && itemToRemove.getQuantity()==item.getQuantity()){
                 items.remove(item);
             }
         }
@@ -37,6 +42,10 @@ public class PurchaseList {
             total+=item.calculateTotal();
         }
         return total;
+    }
+
+    public List<Item> getItems(){
+        return items;
     }
 
 }
