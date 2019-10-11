@@ -30,10 +30,16 @@ public class PurchaseList {
     }
 
     public void removeItem(Item itemToRemove){
-        for(Item item:items){
-            if(itemToRemove.getName().equals(item.getName()) && itemToRemove.getQuantity()==item.getQuantity()){
-                items.remove(item);
+        for(int i =0; i<items.size(); i++){
+            if(itemToRemove.getName().equals(items.get(i).getName()) && itemToRemove.getQuantity()==items.get(i).getQuantity()){
+                items.remove(i);
             }
+        }
+    }
+
+    public void removeAllItems(){
+        for(int i =0; i<items.size();i++){
+            items.remove(i);
         }
     }
 
